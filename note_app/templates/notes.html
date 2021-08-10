@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+
+
+
+
+    <!-- start awesome -->
+    <div class="awesome text-center">
+        <div class="container-fluid">
+            <h2 class="awesome-head h1 head-border-center" style="margin-top: 5rem;">Why this is Awesome</h2>
+            <p class="awesome-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="{% url 'projectt:create_note' %}">Add New Note</a>
+            <div class="row justify-content-center" >
+              {% for note in all_notes %}
+                <div class="col-md-4">
+                  {% if note.img %}
+                    <img src="{{note.img.url}}" style="width: 300px;" alt="">
+                  {% else %}
+                    <img src="{% static 'home-static/images/two.jpg'%}"style="width: 300px;" alt="">
+                  {% endif %}
+
+
+                    <h3 class="feat-head"><a href="{% url 'projectt:note_detail' note.slug %}">{{note.title}}</a></h3>
+                    <h3 class="feat-head">{{note.tags}}</h3>
+                    <p class="feat-info">{{note.content|safe}}</p>
+                    <p>{{note.last_update|date:"j M" }}</p>
+                    <h3 class="feat-head">{{note.user}}</h3>
+                </div>
+              {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- end awesome -->
+{% endblock %}

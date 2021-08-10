@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+
+
+
+    <!-- start awesome -->
+    <div class="awesome text-center">
+        <div class="container">
+            <h2 class="awesome-head h1 head-border-center" style="margin-top: 120px;">Why this is Awesome</h2>
+            <p class="awesome-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="row">
+                <div class="col-md-10" style="text-align: center;margin: auto;">
+                    <img src="{% static "home-static/images/two.jpg" %}" style="width: 300px;" alt="">
+                    <h3 class="feat-head">{{note.title}}</h3>
+                    <p class="feat-info">{{note.content|safe}}</p>
+                    <p class="feat-info">{{note.tags}}</p>
+                    <p class="feat-info">{{note.last_update|date:"j M"}}</p>
+                    <p>{{note.achive}}</p>
+                </div>
+                <a href="{% url 'projectt:edit_note' note.slug%}">Edit Note</a>
+            </div>
+        </div>
+    </div>
+    <!-- end awesome -->
+
+{% endblock %}

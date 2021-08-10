@@ -1,0 +1,14 @@
+.row{
+    margin:11rem;
+    margin-left: 61px;
+}
+.messages{
+  margin-top: 7rem;
+    position: absolute;
+    z-index: 1;
+    color: white;
+    list-style: none;
+}
+.findall{
+    width: 1013px;
+}

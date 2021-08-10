@@ -1,0 +1,7 @@
+<h1>welcome in django</h1>
+<br>
+<a href="{% url 'projectt:create_note' %}">Add Note</a>
+<hr>
+{% for note in all_notes %}
+  <a href="{% url 'projectt:note_detail' note.slug %}">{{note}}</a><br>
+{% endfor %}
